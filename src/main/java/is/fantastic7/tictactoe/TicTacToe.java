@@ -4,7 +4,7 @@
  *
  * @author Lenovo, @date 26.10.2014 12:54
  */
-public class Library {
+public class TicTacToe {
     public boolean someLibraryMethod() {
         return true;
     }
