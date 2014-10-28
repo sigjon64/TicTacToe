@@ -5,7 +5,9 @@
  * @author Lenovo, @date 26.10.2014 12:54
  */
 public class TicTacToe {
-    public boolean someLibraryMethod() {
-        return true;
-    }
+	
+	public static int PlayBoard(int row, int col){
+		int[][] board = new int[2][2];
+		return 0;
+	}
 }
