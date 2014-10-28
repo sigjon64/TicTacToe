@@ -1,0 +1,19 @@
+Skref:
+	1. Búa til tvívítt fylki að stærð 3x3
+	2. Slegið inn X og staðsetning fer á réttan stað í fylkinu
+	3. Slegið inn O og staðsetning fer á réttan stað í fylkinu
+	4. Ef stak í fylkinu er ekki tóm þá skila "Staðsetning upptekin, 		veldu aðra"
+	5. Ef stak er ekki í fylkinu (farið út fyrir stærð fylkisins) þá 		skila "Röng staðsetning, Sláðu inn tvær tölur á bilinu 1-3"
+	6. Ef öll stök í röð er með tákn X þá skila  "X vann"
+	7. Ef öll stök í röð er með tákn O þá skila  "O vann"
+	7. Ef öll stök í dálkur er með tákn X þá skila "X vann"
+	8. Ef öll stök í dálkur er með tákn O þá skila "O vann"
+	9. Ef stök 0.0; 1.1; 2.2 eru öll með tákn X þá skila "X vann"
+	10. Ef stök 0.0; 1.1; 2.2 eru öll með tákn O þá skila "O vann"
+	11. Ef stök 0.2; 1.1; 2.0 eru öll með tákn X þá skila "X vann"
+	12. Ef stök 0.2; 1.1; 2.0 eru öll með tákn O þá skila "O vann"
+
+Ath! Er hægt að testa hvort prentað er rétt út!!!
+	1. Prenta út 3x3 borð með línunum
+	2. Slegið inn X og farið á réttan stað í fylkinu
+	3. Slegið inn O og prenta út á réttum stað á borðinu
