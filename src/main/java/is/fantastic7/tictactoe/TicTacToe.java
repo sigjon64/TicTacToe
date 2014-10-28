@@ -4,8 +4,11 @@
  *
  * @author Lenovo, @date 26.10.2014 12:54
  */
+import java.util.Scanner;
+import static java.lang.System.out;
+
 public class TicTacToe {
-	
+		
 	public static int PlayBoard(int row, int col){
 		int[][] board = new int[2][2];
 		return 0;
