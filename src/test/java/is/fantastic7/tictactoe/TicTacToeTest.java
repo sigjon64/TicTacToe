@@ -1,8 +1,9 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
-import java.util.Scanner;
 import static java.lang.System.out;
+import java.util.Scanner;
+
 
 
 public class TicTacToeTest {
@@ -21,19 +22,15 @@ public class TicTacToeTest {
 		assertEquals(t.PLAYS, t.state);
 		assertEquals(t.EX, t.player);
 	}
-
 	/*
 	@Test
 	public void TestEnterMove()
 	{
-		//int wrong = 3;
-		Scanner readin = new Scanner(System.in);
-		assertEquals("Player X make your move, choose row(1-3) and column(1-3)", t.enterMove());
+		t.enterMove(1);
+		Scanner input = new Scanner("Player X make your move, choose row(1-3) and column(1-3)");
+		assertEquals("Player X make your move, choose row(1-3) and column(1-3)", t.EX);
+		
+		//assertEquals("Player O make your move, choose row(1-3) and column(1-3)", (t.theDoer != t.EX));
+	}*/
 
-		//while(wrong >=4 || wrong <= 0) {
-		//	assertEquals("Illegal move! Try again...", t.enterMove(0));
-		//}
-	}
-	*/
-	
 }

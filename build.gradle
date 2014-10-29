@@ -13,12 +13,9 @@
 
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
-<<<<<<< HEAD
 apply plugin: 'application'
 
 mainClassName = "is.fantastic7.tictactoe.TicTacToe"
-=======
->>>>>>> annak
 
 // In this section you declare where to find the dependencies of your project
 repositories {
