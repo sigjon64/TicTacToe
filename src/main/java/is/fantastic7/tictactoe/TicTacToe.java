@@ -12,15 +12,12 @@ public class TicTacToe {
 	public static final int EX = 1; // "X"
 	public static int player;
 	public static int state;
-<<<<<<< HEAD
 	public static int [][] playBoard = new int [ROW][COL];
-=======
 	public static int row;
 	public static int col;
 	public static int [][] playBoard = new int [ROW][COL];
 
 	public static Scanner readin = new Scanner(System.in);
->>>>>>> annak
 		
 
 	public static void initialGameBoard() {
@@ -32,8 +29,6 @@ public class TicTacToe {
 		state = PLAYS;
 		player = EX;
 	}
-<<<<<<< HEAD
-=======
 
 	public static void enterMove(int theDoer) {
 		boolean leagalMove = false;
@@ -60,5 +55,4 @@ public class TicTacToe {
 		}
 		while(leagalMove = true);
 	}
->>>>>>> annak
 }
