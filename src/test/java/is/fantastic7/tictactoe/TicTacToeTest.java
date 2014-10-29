@@ -1,11 +1,8 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
-<<<<<<< HEAD
-=======
 import java.util.Scanner;
 import static java.lang.System.out;
->>>>>>> annak
 
 
 public class TicTacToeTest {
@@ -24,10 +21,7 @@ public class TicTacToeTest {
 		assertEquals(t.PLAYS, t.state);
 		assertEquals(t.EX, t.player);
 	}
-<<<<<<< HEAD
-}
-=======
-	
+
 	/*
 	@Test
 	public void TestEnterMove()
@@ -43,4 +37,3 @@ public class TicTacToeTest {
 	*/
 	
 }
->>>>>>> annak
