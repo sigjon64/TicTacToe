@@ -19,12 +19,28 @@ public class TicTacToeTest
 	}
 
 	@Test
-	public void testTicTacToeConstructor() {
+	public void testSetStartPlayer() {
+		t.setStartPlayer();
 		assertEquals('x', t.playerX);
+	}
+
+	@Test
+	public void testTicTacToeConstructor() {
+		t.initializeBoard();
 		for(int i = 0; i < 3; i++) {
 			assertEquals(3, t.board[i].length);
+		}	
+	}
+
+	@Test
+	public void testNewBoard() {
+		t.initializeBoard();
+		t.newBoard();
+		for(int i = 0; i < 3; i++) {
+			for(int j = 0; j < 3; j++) {
+				assertEquals('-', t.board[i][j]);
+			}
 		}
-		
 	}
 
 
