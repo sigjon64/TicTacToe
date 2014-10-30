@@ -44,4 +44,13 @@ public class TicTacToeTest
 	}
 
 
+	@Test
+	public void testDisplayBoard() {
+		t.initializeBoard();
+		t.newBoard();
+		String actual = t.displayBoard();
+		String expected = "-------------\n| - | - | - | \n-------------\n| - | - | - | \n-------------\n| - | - | - | \n-------------\n";
+		assertEquals(actual, expected);
+	}
+
 }
