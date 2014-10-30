@@ -43,7 +43,6 @@ public class TicTacToeTest
 		}
 	}
 
-
 	@Test
 	public void testDisplayBoard() {
 		t.initializeBoard();
@@ -51,6 +50,15 @@ public class TicTacToeTest
 		String actual = t.displayBoard();
 		String expected = "-------------\n| - | - | - | \n-------------\n| - | - | - | \n-------------\n| - | - | - | \n-------------\n";
 		assertEquals(actual, expected);
+	}
+
+	@Test
+	public void testCheckIfBoardNotFull() {
+		t.initializeBoard();
+		t.newBoard();
+		t.setStartPlayer();
+		boolean actual = t.checkIfBoardFull();
+		assertEquals(actual, false);
 	}
 
 }

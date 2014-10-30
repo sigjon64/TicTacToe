@@ -28,22 +28,39 @@ public class TicTacToe {
 		String printBoard = "";
 		printBoard += "-------------\n";
 
-		for(int rows = 0; rows < 3; rows++)
-		{	
+		for(int rows = 0; rows < 3; rows++) {	
 			printBoard +="| ";
-			for(int cols = 0; cols < 3; cols++)
-			{
+			for(int cols = 0; cols < 3; cols++) {
 				printBoard += board[rows][cols];
 				printBoard += " | ";
 			}
 
 			printBoard += "\n";
 			printBoard += "-------------\n";
-
 		}
+
 		System.out.println(printBoard);
 		return printBoard;
 	}
+
+	//Check if any cell of the board still contains no value, represented by '-' if so 
+	//the game continues else the board is full
+	public boolean checkIfBoardFull()
+	{
+		boolean boardFull = true;
+
+		for(int rows = 0; rows < 3; rows++) {
+			for(int cols = 0; cols < 3; cols++) {
+				if(board[rows][cols] == '-') {
+					boardFull = false;
+				}
+			}
+		}
+		return boardFull;
+	}
+
+
+
 }
 
 
