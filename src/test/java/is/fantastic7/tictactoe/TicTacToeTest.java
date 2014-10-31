@@ -84,11 +84,23 @@ public class TicTacToeTest
 	}
 
 	@Test
-	public void testCheckIfWin() {
+	public void testCheckNoWin() {
 		t.initializeBoard();
 		t.newBoard();
 		boolean actual = t.checkIfWin();
 		assertFalse(actual);
+	}
+
+	@Test
+	public void testCheckIfWinRow() {
+		t.initializeBoard();
+		t.newBoard();
+		t.setStartPlayer();
+		for(int i = 0; i < 3; i++) {
+			t.registerMove(0,i);
+		}
+		boolean actual = t.checkIfWin();
+		assertTrue(actual);
 	}
 
 }
