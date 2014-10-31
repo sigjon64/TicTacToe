@@ -16,12 +16,20 @@ public class TicTacToe {
 		int o;
 
 		while(!newGame.gameFinished()) {
+
+			System.out.println("Pick the first number from 0 to 2, press enter and then pick the second number from 0 to 2:");
 			x = in.nextInt();
 			o = in.nextInt();
+			if((x > 2 || x < 0)) {
+				System.out.println("Illegal move, game shutting dowm");
+				return;
+			}
+			else {
+				newGame.registerMove(x,o);
+				newGame.switchPlayer();
+				newGame.displayBoard();
 
-			newGame.registerMove(x,o);
-			newGame.switchPlayer();
-			newGame.displayBoard();
+			}
 		}
 		if(newGame.checkIfWin()) {
 			System.out.println("Congratulations We Have a Winner!!!");
