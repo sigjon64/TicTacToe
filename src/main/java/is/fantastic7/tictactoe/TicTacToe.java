@@ -71,7 +71,18 @@ public class TicTacToe {
             }
         }
         return false;
-	} 
+	}
+
+	//Create a function that switches between 'x' and 'o' to indicate
+	//different users
+	public void switchPlayer() {
+		if(playerX == 'x') {
+			playerX = 'o';
+		}
+		else {
+			playerX = 'x';
+		}
+	}
 
 
 

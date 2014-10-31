@@ -74,4 +74,13 @@ public class TicTacToeTest
 		assertEquals(actual, expected);
 	}
 
+	@Test
+	public void testSwitchPlayer() {
+		t.setStartPlayer();
+		t.switchPlayer();
+		assertEquals('o', t.playerX);
+		t.switchPlayer();
+		assertEquals('x', t.playerX);
+	}
+
 }
