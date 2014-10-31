@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TicTacToeTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2014-10-31T00:48:47" hostname="AnnaKatrin" time="0.018">
+<testsuite name="TicTacToeTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2014-10-31T00:50:48" hostname="AnnaKatrin" time="0.025">
   <properties/>
-  <testcase name="testSwitchPlayer" classname="TicTacToeTest" time="0.001"/>
-  <testcase name="testDisplayBoard" classname="TicTacToeTest" time="0.013"/>
-  <testcase name="testCheckIfBoardNotFull" classname="TicTacToeTest" time="0.0"/>
+  <testcase name="testSwitchPlayer" classname="TicTacToeTest" time="0.002"/>
+  <testcase name="testDisplayBoard" classname="TicTacToeTest" time="0.018"/>
+  <testcase name="testCheckIfBoardNotFull" classname="TicTacToeTest" time="0.001"/>
   <testcase name="testSetStartPlayer" classname="TicTacToeTest" time="0.0"/>
-  <testcase name="testCheckNoWin" classname="TicTacToeTest" time="0.001"/>
+  <testcase name="testCheckNoWin" classname="TicTacToeTest" time="0.0"/>
   <testcase name="testRegisterMove" classname="TicTacToeTest" time="0.0"/>
-  <testcase name="testTicTacToeConstructor" classname="TicTacToeTest" time="0.001"/>
+  <testcase name="testTicTacToeConstructor" classname="TicTacToeTest" time="0.0"/>
+  <testcase name="testCheckIfWinCol" classname="TicTacToeTest" time="0.001"/>
   <testcase name="testCheckIfWinRow" classname="TicTacToeTest" time="0.0"/>
   <testcase name="testNewBoard" classname="TicTacToeTest" time="0.0"/>
   <system-out><![CDATA[-------------
