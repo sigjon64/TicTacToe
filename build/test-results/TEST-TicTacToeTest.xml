@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="TicTacToeTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2014-10-31T14:48:44" hostname="idea-PC" time="0.014">
+  <properties/>
+  <testcase name="testSwitchPlayer" classname="TicTacToeTest" time="0.001"/>
+  <testcase name="testDisplayBoard" classname="TicTacToeTest" time="0.01"/>
+  <testcase name="testCheckIfBoardNotFull" classname="TicTacToeTest" time="0.0"/>
+  <testcase name="testCheckIfWinGameFinished" classname="TicTacToeTest" time="0.0"/>
+  <testcase name="testSetStartPlayer" classname="TicTacToeTest" time="0.0"/>
+  <testcase name="testCheckNoWin" classname="TicTacToeTest" time="0.001"/>
+  <testcase name="testRegisterMove" classname="TicTacToeTest" time="0.0"/>
+  <testcase name="testCheckIfGameFinishedBoardFull" classname="TicTacToeTest" time="0.0"/>
+  <testcase name="testCheckIfWinAcross" classname="TicTacToeTest" time="0.0"/>
+  <testcase name="testTicTacToeConstructor" classname="TicTacToeTest" time="0.0"/>
+  <testcase name="testCheckIfWinCol" classname="TicTacToeTest" time="0.0"/>
+  <testcase name="testCheckIfWinRow" classname="TicTacToeTest" time="0.0"/>
+  <testcase name="testNewBoard" classname="TicTacToeTest" time="0.0"/>
+  <system-out><![CDATA[-------------
+| - | - | - | 
+-------------
+| - | - | - | 
+-------------
+| - | - | - | 
+-------------
+
+-------------
+| x | - | - | 
+-------------
+| - | - | - | 
+-------------
+| - | - | - | 
+-------------
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
