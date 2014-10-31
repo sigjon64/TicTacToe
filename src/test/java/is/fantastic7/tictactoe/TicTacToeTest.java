@@ -1,3 +1,4 @@
+package is.fantastic7.tictactoe;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Before;
