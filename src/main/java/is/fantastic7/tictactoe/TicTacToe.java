@@ -84,7 +84,42 @@ public class TicTacToe {
 		}
 	}
 
+	//A function to call all the other functions that monitor if a win is found
+	//anywhere accross the entire board. Returns true if a win is found and false otherwise.
+	public boolean checkIfWin() {
+		return ( checkIfWinCols() || checkIfWinRows() || checkIfWinAcross()); 
+	}
 
+	//Go through all columns to check for a win, return true if a win is found
+	private boolean checkIfWinCols() {
+		for(int cols = 0; cols < 3; cols++) {
+			if(checkIfTrueWin(board[0][cols], board[1][cols], board[2][cols]) == true) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	//Go through all rows to check for a win, return true if a win is found
+	private boolean checkIfWinRows() {
+		for(int rows = 0; rows < 3; rows++) {
+			if(checkIfTrueWin(board[rows][0], board[rows][1], board[rows][2]) == true) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	//Check for a win across the board, return true is a win is found
+	private boolean checkIfWinAcross() {
+		return ((checkIfTrueWin(board[0][2], board[1][1], board[2][0]) == true) || (checkIfTrueWin(board[0][0], board[1][1], board[2][2]) == true));
+	}
+
+	//Make sure that the win is true, that is only the same variables, all 'x' or all 'o'
+	//and not an empty cell
+	private boolean checkIfTrueWin(char cell1, char cell2, char cell3) {
+		return((cell1 != '-') && (cell1 == cell2) && (cell2 == cell3));
+	}
 
 }
 

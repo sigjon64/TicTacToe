@@ -83,4 +83,12 @@ public class TicTacToeTest
 		assertEquals('x', t.playerX);
 	}
 
+	@Test
+	public void testCheckIfWin() {
+		t.initializeBoard();
+		t.newBoard();
+		boolean actual = t.checkIfWin();
+		assertFalse(actual);
+	}
+
 }
