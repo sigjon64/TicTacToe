@@ -8,6 +8,7 @@ import static java.lang.System.out;
 public class TicTacToeTest 
 {
 	private TicTacToe t;
+	String printBoard;
 
 	public static void main(String args[]) {
 		org.junit.runner.JUnitCore.main("is.fantastic7.tictactoe.TicTacToeTest");
@@ -16,6 +17,7 @@ public class TicTacToeTest
 	@Before
 	public void setup() {
 		t = new TicTacToe();
+		printBoard = "-------------\n| - | - | - | \n-------------\n| - | - | - | \n-------------\n| - | - | - | \n-------------\n";
 	}
 
 	@Test
@@ -48,7 +50,7 @@ public class TicTacToeTest
 		t.initializeBoard();
 		t.newBoard();
 		String actual = t.displayBoard();
-		String expected = "-------------\n| - | - | - | \n-------------\n| - | - | - | \n-------------\n| - | - | - | \n-------------\n";
+		String expected = printBoard;
 		assertEquals(actual, expected);
 	}
 
@@ -59,6 +61,17 @@ public class TicTacToeTest
 		t.setStartPlayer();
 		boolean actual = t.checkIfBoardFull();
 		assertEquals(actual, false);
+	}
+
+	@Test
+	public void testRegisterMove() {
+		t.initializeBoard();
+		t.newBoard();
+		t.setStartPlayer();
+		String expected = "-------------\n| x | - | - | \n-------------\n| - | - | - | \n-------------\n| - | - | - | \n-------------\n";
+		t.registerMove(0,0);
+		String actual = t.displayBoard();
+		assertEquals(actual, expected);
 	}
 
 }

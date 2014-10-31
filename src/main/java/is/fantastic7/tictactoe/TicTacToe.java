@@ -59,6 +59,20 @@ public class TicTacToe {
 		return boardFull;
 	}
 
+	//Register the current players moves on a specific cell on the board defined by
+	//either 'x' or 'o'. The cell is defined by a input of a specific row and column.
+	public boolean registerMove(int row, int col) {
+		if ((row >= 0) && (row < 3)) {
+        	if ((col >= 0) && (col < 3)) {
+                if (board[row][col] == '-') {
+                    board[row][col] = playerX;
+                    return true;
+                }
+            }
+        }
+        return false;
+	} 
+
 
 
 }
