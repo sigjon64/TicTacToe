@@ -54,8 +54,5 @@ mainClassName = "is.fantastic7.tictactoe.TicTacToe"
 run {
     standardInput = System.in
 }
-
-task stage { 
-	dependsOn installApp 
-}  
  
+task stage { dependsOn installApp }
