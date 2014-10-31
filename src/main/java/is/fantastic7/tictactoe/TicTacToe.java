@@ -17,11 +17,11 @@ public class TicTacToe {
 
 		while(!newGame.gameFinished()) {
 
-			System.out.println("Pick the first number from 0 to 2, press enter and then pick the second number from 0 to 2:");
+			//System.out.println("Pick the first number from 0 to 2, press enter and then pick the second number from 0 to 2:");
 			x = in.nextInt();
 			o = in.nextInt();
 			if((x > 2 || x < 0)) {
-				System.out.println("Illegal move, game shutting dowm");
+				//System.out.println("Illegal move, game shutting dowm");
 				return;
 			}
 			else {
