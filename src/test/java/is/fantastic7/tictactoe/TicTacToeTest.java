@@ -127,4 +127,25 @@ public class TicTacToeTest
 		assertTrue(actual);
 	}
 
+	@Test
+	public void testCheckIfWinGameFinished() {
+		this.testCheckIfWinAcross();
+		boolean actual = t.gameFinished();
+		assertTrue(actual);
+	}
+
+	@Test
+	public void testCheckIfGameFinishedBoardFull() {
+		t.initializeBoard();
+		t.newBoard();
+		t.setStartPlayer();
+		for(int i = 0; i < 3; i++) {
+			for(int j = 0; j < 3; j++) {
+				t.registerMove(i,j);	
+			} 
+		}
+		boolean actual = t.gameFinished();
+		assertTrue(actual);
+	}
+
 }

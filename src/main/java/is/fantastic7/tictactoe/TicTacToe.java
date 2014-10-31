@@ -121,6 +121,13 @@ public class TicTacToe {
 		return((cell1 != '-') && (cell1 == cell2) && (cell2 == cell3));
 	}
 
+	//Checking if the game is finished by checking if either there is a win or
+	//the board is full and there is a draw
+	public boolean gameFinished()
+	{
+		return this.checkIfWin() || this.checkIfBoardFull();
+	}
+
 }
 
 
