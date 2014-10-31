@@ -1,3 +1,4 @@
+package is.fantastic7.tictactoe;
 import java.util.Scanner;
 import static java.lang.System.out;
 
