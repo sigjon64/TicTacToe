@@ -17,9 +17,16 @@ public class TicTacToe {
 
 		while(!newGame.gameFinished()) {
 
-			//System.out.println("Pick the first number from 0 to 2, press enter and then pick the second number from 0 to 2:");
-			x = in.nextInt();
-			o = in.nextInt();
+			///System.out.println("Pick the first number from 0 to 2, press enter and then pick the second number from 0 to 2:");
+			x = 0;
+			o = 0;
+
+			if(in.hasNextInt()) {
+				x = in.nextInt();
+				o = in.nextInt();
+			}
+			//s.close();
+
 			if((x > 2 || x < 0)) {
 				//System.out.println("Illegal move, game shutting dowm");
 				return;
@@ -28,7 +35,6 @@ public class TicTacToe {
 				newGame.registerMove(x,o);
 				newGame.switchPlayer();
 				newGame.displayBoard();
-
 			}
 		}
 		if(newGame.checkIfWin()) {
