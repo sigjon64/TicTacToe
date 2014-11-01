@@ -31,6 +31,19 @@ dependencies {
 
 
 }
+
+    doFirst {
+        switch(ant.properties.os) {
+            case 'unix':
+                'build/install/TicTacToe/bin/TicTacToe &'.execute()
+                break
+            case 'windows':
+                'build\\install\\TicTacToe\\bin\\TicTacToe.bat'.execute()
+                break
+        }
+    }
+}
+
 jar {
     manifest {
         attributes("Main-Class": "is.fantastic7.tictactoe.TicTacToe")
