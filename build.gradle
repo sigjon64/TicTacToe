@@ -40,9 +40,9 @@ dependencies {
             case 'windows':
                 'build\\install\\TicTacToe\\bin\\TicTacToe.bat'.execute()
                 break
-        }
-    }
+     }
 }
+
 
 jar {
     manifest {
