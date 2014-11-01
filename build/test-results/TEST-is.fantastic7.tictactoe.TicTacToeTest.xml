@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.fantastic7.tictactoe.TicTacToeTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2014-11-01T02:14:36" hostname="AnnaKatrin" time="0.021">
+<testsuite name="is.fantastic7.tictactoe.TicTacToeTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2014-11-01T02:42:17" hostname="AnnaKatrin" time="0.018">
   <properties/>
   <testcase name="testSwitchPlayer" classname="is.fantastic7.tictactoe.TicTacToeTest" time="0.001"/>
-  <testcase name="testDisplayBoard" classname="is.fantastic7.tictactoe.TicTacToeTest" time="0.016"/>
+  <testcase name="testDisplayBoard" classname="is.fantastic7.tictactoe.TicTacToeTest" time="0.013"/>
   <testcase name="testCheckIfBoardNotFull" classname="is.fantastic7.tictactoe.TicTacToeTest" time="0.0"/>
-  <testcase name="testCheckIfWinGameFinished" classname="is.fantastic7.tictactoe.TicTacToeTest" time="0.0"/>
+  <testcase name="testCheckIfWinGameFinished" classname="is.fantastic7.tictactoe.TicTacToeTest" time="0.001"/>
   <testcase name="testSetStartPlayer" classname="is.fantastic7.tictactoe.TicTacToeTest" time="0.0"/>
   <testcase name="testCheckNoWin" classname="is.fantastic7.tictactoe.TicTacToeTest" time="0.0"/>
   <testcase name="testRegisterMove" classname="is.fantastic7.tictactoe.TicTacToeTest" time="0.0"/>

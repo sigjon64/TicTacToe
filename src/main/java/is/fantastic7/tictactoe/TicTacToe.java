@@ -8,6 +8,8 @@ public class TicTacToe {
 		TicTacToe newGame = new TicTacToe();
 		Scanner in = new Scanner(System.in);
 
+		System.out.println("Welcome to TicTacToe! \nPick the first number from 0 to 2, press enter and then pick the second number from 0 to 2:");
+
 		newGame.setStartPlayer();
 		newGame.initializeBoard();
 		newGame.newBoard();
@@ -18,8 +20,6 @@ public class TicTacToe {
 
 		while(!newGame.gameFinished()) {
 
-			System.out.println("Welcome to TicTacToe! \nPick the first number from 0 to 2, press enter and then pick the second number from 0 to 2:");
-			newGame.displayBoard();
 			x = 0;
 			o = 0;
 
