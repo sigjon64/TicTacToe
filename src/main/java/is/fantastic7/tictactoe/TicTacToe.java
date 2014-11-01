@@ -13,16 +13,17 @@ public class TicTacToe {
 		newGame.setStartPlayer();
 		newGame.initializeBoard();
 		newGame.newBoard();
+		newGame.displayBoard();
+
 		//If no win is determined or a draw, then switch to player 'o'
 		int x;
 		int o;
-
 
 		while(!newGame.gameFinished()) {
 
 			x = 0;
 			o = 0;
-
+			newGame.registerMove(x,o);
 			if(in.hasNextInt()) {
 				x = in.nextInt();
 				o = in.nextInt();
