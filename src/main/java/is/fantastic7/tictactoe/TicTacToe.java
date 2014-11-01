@@ -6,10 +6,9 @@ public class TicTacToe {
 
 		public static void main(String[] args) {
 		TicTacToe newGame = new TicTacToe();
-		Scanner in = new Scanner(System.in);
 
 		System.out.println("Welcome to TicTacToe! \nPick the first number from 0 to 2, press enter and then pick the second number from 0 to 2:");
-
+		Scanner in = new Scanner(System.in);
 		newGame.setStartPlayer();
 		newGame.initializeBoard();
 		newGame.newBoard();
@@ -19,32 +18,35 @@ public class TicTacToe {
 		int x;
 		int o;
 
-		while(!newGame.gameFinished()) {
-
+		do {
 			x = 0;
 			o = 0;
-			newGame.registerMove(x,o);
+
 			if(in.hasNextInt()) {
 				x = in.nextInt();
 				o = in.nextInt();
 			}
 
 			if((x > 2 || x < 0)) {
-				//System.out.println("Illegal move, game shutting dowm");
+				System.out.println("Illegal move, game shutting dowm");
 				return;
 			}
 			else {
 				newGame.registerMove(x,o);
 				newGame.switchPlayer();
 				newGame.displayBoard();
+				System.out.println("Make your next move");
 			}
+
+			if(newGame.checkIfWin()) {
+				System.out.println("Congratulations We Have a Winner!!!");
+			}
+			if(newGame.checkIfBoardFull()){
+				System.out.println("No Winner,You are Equally Smart!!");
+			}
+
 		}
-		if(newGame.checkIfWin()) {
-			System.out.println("Congratulations We Have a Winner!!!");
-		}
-		else {
-			System.out.println("No Winner,You are Equally Smart!!");
-		}
+		while(!newGame.gameFinished());
 		System.exit(0);
 	} 
 
