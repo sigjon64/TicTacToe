@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>TicTacToe.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">TicTacToe</a> &gt; <a href="index.source.html" class="el_package">is.fantastic7.tictactoe</a> &gt; <span class="el_source">TicTacToe.java</span></div><h1>TicTacToe.java</h1><pre class="source lang-java linenums">package is.fantastic7.tictactoe;
+import java.util.Scanner;
+import static java.lang.System.out;
+
+public class TicTacToe {
+
+		public static void main(String[] args) {
+<span class="nc" id="L8">		TicTacToe newGame = new TicTacToe();</span>
+
+<span class="nc" id="L10">		System.out.println(&quot;Welcome to TicTacToe! \nPick the first number from 0 to 2, press enter and then pick the second number from 0 to 2:&quot;);</span>
+<span class="nc" id="L11">		Scanner in = new Scanner(System.in);</span>
+<span class="nc" id="L12">		newGame.setStartPlayer();</span>
+<span class="nc" id="L13">		newGame.initializeBoard();</span>
+<span class="nc" id="L14">		newGame.newBoard();</span>
+<span class="nc" id="L15">		newGame.displayBoard();</span>
+
+		//If no win is determined or a draw, then switch to player 'o'
+		int x;
+		int o;
+
+		do {
+<span class="nc" id="L22">			x = 0;</span>
+<span class="nc" id="L23">			o = 0;</span>
+
+<span class="nc bnc" id="L25" title="All 2 branches missed.">			if(in.hasNextInt()) {</span>
+<span class="nc" id="L26">				x = in.nextInt();</span>
+<span class="nc" id="L27">				o = in.nextInt();</span>
+			}
+
+<span class="nc bnc" id="L30" title="All 4 branches missed.">			if((x &gt; 2 || x &lt; 0)) {</span>
+<span class="nc" id="L31">				System.out.println(&quot;Illegal move, game shutting dowm&quot;);</span>
+<span class="nc" id="L32">				return;</span>
+			}
+			else {
+<span class="nc" id="L35">				newGame.registerMove(x,o);</span>
+<span class="nc" id="L36">				newGame.switchPlayer();</span>
+<span class="nc" id="L37">				newGame.displayBoard();</span>
+<span class="nc" id="L38">				System.out.println(&quot;Make your next move&quot;);</span>
+			}
+
+<span class="nc bnc" id="L41" title="All 2 branches missed.">			if(newGame.checkIfWin()) {</span>
+<span class="nc" id="L42">				System.out.println(&quot;Congratulations We Have a Winner!!!&quot;);</span>
+			}
+<span class="nc bnc" id="L44" title="All 2 branches missed.">			if(newGame.checkIfBoardFull()){</span>
+<span class="nc" id="L45">				System.out.println(&quot;No Winner,You are Equally Smart!!&quot;);</span>
+			}
+
+		}
+<span class="nc bnc" id="L49" title="All 2 branches missed.">		while(!newGame.gameFinished());</span>
+<span class="nc" id="L50">		System.exit(0);</span>
+<span class="nc" id="L51">	} </span>
+
+	
+	public char[][] board;
+	public char playerX;
+<span class="fc" id="L56">	public TicTacToe() {}</span>
+
+
+	public void setStartPlayer() {
+<span class="fc" id="L60">		this.playerX = 'x';</span>
+<span class="fc" id="L61">	}</span>
+
+	public void initializeBoard() {
+<span class="fc" id="L64">		board = new char[3][3];</span>
+<span class="fc" id="L65">	}</span>
+
+	public void newBoard() {
+<span class="fc bfc" id="L68" title="All 2 branches covered.">		for(int rows = 0; rows &lt; 3; rows++) {</span>
+<span class="fc bfc" id="L69" title="All 2 branches covered.">			for(int cols = 0; cols &lt; 3; cols++) {</span>
+<span class="fc" id="L70">				board[rows][cols] = '-';</span>
+			}
+		}
+<span class="fc" id="L73">	}</span>
+
+	//Board is displayed in current state
+	public String displayBoard()
+	{
+<span class="fc" id="L78">		String printBoard = &quot;&quot;;</span>
+<span class="fc" id="L79">		printBoard += &quot;-------------\n&quot;;</span>
+
+<span class="fc bfc" id="L81" title="All 2 branches covered.">		for(int rows = 0; rows &lt; 3; rows++) {	</span>
+<span class="fc" id="L82">			printBoard +=&quot;| &quot;;</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">			for(int cols = 0; cols &lt; 3; cols++) {</span>
+<span class="fc" id="L84">				printBoard += board[rows][cols];</span>
+<span class="fc" id="L85">				printBoard += &quot; | &quot;;</span>
+			}
+
+<span class="fc" id="L88">			printBoard += &quot;\n&quot;;</span>
+<span class="fc" id="L89">			printBoard += &quot;-------------\n&quot;;</span>
+		}
+
+<span class="fc" id="L92">		System.out.println(printBoard);</span>
+<span class="fc" id="L93">		return printBoard;</span>
+	}
+
+	//Check if any cell of the board still contains no value, represented by '-' if so 
+	//the game continues else the board is full
+	public boolean checkIfBoardFull()
+	{
+<span class="fc" id="L100">		boolean boardFull = true;</span>
+
+<span class="fc bfc" id="L102" title="All 2 branches covered.">		for(int rows = 0; rows &lt; 3; rows++) {</span>
+<span class="fc bfc" id="L103" title="All 2 branches covered.">			for(int cols = 0; cols &lt; 3; cols++) {</span>
+<span class="pc bpc" id="L104" title="1 of 2 branches missed.">				if(board[rows][cols] == '-') {</span>
+<span class="fc" id="L105">					boardFull = false;</span>
+				}
+			}
+		}
+<span class="fc" id="L109">		return boardFull;</span>
+	}
+
+	//Register the current players moves on a specific cell on the board defined by
+	//either 'x' or 'o'. The cell is defined by a input of a specific row and column.
+	public boolean registerMove(int row, int col) {
+<span class="pc bpc" id="L115" title="2 of 4 branches missed.">		if ((row &gt;= 0) &amp;&amp; (row &lt; 3)) {</span>
+<span class="pc bpc" id="L116" title="2 of 4 branches missed.">        	if ((col &gt;= 0) &amp;&amp; (col &lt; 3)) {</span>
+<span class="pc bpc" id="L117" title="1 of 2 branches missed.">                if (board[row][col] == '-') {</span>
+<span class="fc" id="L118">                    board[row][col] = playerX;</span>
+<span class="fc" id="L119">                    return true;</span>
+                }
+            }
+        }
+<span class="nc" id="L123">        return false;</span>
+	}
+
+	//Create a function that switches between 'x' and 'o' to indicate
+	//different users
+	public void switchPlayer() {
+<span class="fc bfc" id="L129" title="All 2 branches covered.">		if(playerX == 'x') {</span>
+<span class="fc" id="L130">			playerX = 'o';</span>
+		}
+		else {
+<span class="fc" id="L133">			playerX = 'x';</span>
+		}
+<span class="fc" id="L135">	}</span>
+
+	//A function to call all the other functions that monitor if a win is found
+	//anywhere accross the entire board. Returns true if a win is found and false otherwise.
+	public boolean checkIfWin() {
+<span class="fc bfc" id="L140" title="All 6 branches covered.">		return ( checkIfWinCols() || checkIfWinRows() || checkIfWinAcross()); </span>
+	}
+
+	//Go through all columns to check for a win, return true if a win is found
+	private boolean checkIfWinCols() {
+<span class="fc bfc" id="L145" title="All 2 branches covered.">		for(int cols = 0; cols &lt; 3; cols++) {</span>
+<span class="fc bfc" id="L146" title="All 2 branches covered.">			if(checkIfTrueWin(board[0][cols], board[1][cols], board[2][cols]) == true) {</span>
+<span class="fc" id="L147">				return true;</span>
+			}
+		}
+<span class="fc" id="L150">		return false;</span>
+	}
+
+	//Go through all rows to check for a win, return true if a win is found
+	private boolean checkIfWinRows() {
+<span class="fc bfc" id="L155" title="All 2 branches covered.">		for(int rows = 0; rows &lt; 3; rows++) {</span>
+<span class="fc bfc" id="L156" title="All 2 branches covered.">			if(checkIfTrueWin(board[rows][0], board[rows][1], board[rows][2]) == true) {</span>
+<span class="fc" id="L157">				return true;</span>
+			}
+		}
+<span class="fc" id="L160">		return false;</span>
+	}
+
+	//Check for a win across the board, return true is a win is found
+	private boolean checkIfWinAcross() {
+<span class="pc bpc" id="L165" title="1 of 4 branches missed.">		return ((checkIfTrueWin(board[0][2], board[1][1], board[2][0]) == true) || (checkIfTrueWin(board[0][0], board[1][1], board[2][2]) == true));</span>
+	}
+
+	//Make sure that the win is true, that is only the same variables, all 'x' or all 'o'
+	//and not an empty cell
+	private boolean checkIfTrueWin(char cell1, char cell2, char cell3) {
+<span class="pc bpc" id="L171" title="1 of 6 branches missed.">		return((cell1 != '-') &amp;&amp; (cell1 == cell2) &amp;&amp; (cell2 == cell3));</span>
+	}
+
+	//Checking if the game is finished by checking if either there is a win or
+	//the board is full and there is a draw
+	public boolean gameFinished()
+	{
+<span class="pc bpc" id="L178" title="3 of 4 branches missed.">		return this.checkIfWin() || this.checkIfBoardFull();</span>
+	}
+
+}
+
+
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>
